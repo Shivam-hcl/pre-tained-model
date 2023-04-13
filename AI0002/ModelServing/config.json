@@ -1,0 +1,8 @@
+{
+    "problem_type": "classification",
+    "modelVersion": "1",
+    "target_feature": "Species",
+    "targetPath": "AI0002",
+    "ipAddress": "127.0.0.1",
+    "portNo": "8094"
+}

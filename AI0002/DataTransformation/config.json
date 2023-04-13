@@ -1,0 +1,240 @@
+{
+    "problem_type": "classification",
+    "modelVersion": "1",
+    "target_feature": "Species",
+    "profiler": {
+        "featureDict": [
+            {
+                "feature": "sepal length (cm)",
+                "type": "numerical",
+                "fillMethod": "median",
+                "categoryEncoding": "na",
+                "outlier": "disable",
+                "outlierOperation": "nochange",
+                "normalization": "none"
+            },
+            {
+                "feature": "sepal width (cm)",
+                "type": "numerical",
+                "fillMethod": "median",
+                "categoryEncoding": "na",
+                "outlier": "disable",
+                "outlierOperation": "nochange",
+                "normalization": "none"
+            },
+            {
+                "feature": "petal length (cm)",
+                "type": "numerical",
+                "fillMethod": "median",
+                "categoryEncoding": "na",
+                "outlier": "disable",
+                "outlierOperation": "nochange",
+                "normalization": "none"
+            },
+            {
+                "feature": "petal width (cm)",
+                "type": "numerical",
+                "fillMethod": "median",
+                "categoryEncoding": "na",
+                "outlier": "disable",
+                "outlierOperation": "nochange",
+                "normalization": "none"
+            },
+            {
+                "feature": "Species",
+                "type": "categorical",
+                "fillMethod": "mode",
+                "categoryEncoding": "targetEncoding",
+                "outlier": "disable",
+                "outlierOperation": "nochange",
+                "normalization": "none"
+            }
+        ],
+        "numericalFillMethod": {
+            "Median": "True",
+            "Mean": "False",
+            "KNNImputer": "False",
+            "Max": "False",
+            "Min": "False",
+            "Zero": "False",
+            "Drop": "False"
+        },
+        "categoricalFillMethod": {
+            "Mode": "True",
+            "Zero": "False",
+            "Drop": "False",
+            "MostFrequent": "False"
+        },
+        "categoryEncoding": {
+            "TargetEncoding": "True",
+            "OneHotEncoding": "False",
+            "LabelEncoding": "False"
+        },
+        "outlierDetection": {
+            "IQR": "False",
+            "ZSCORE": "False",
+            "IsolationForest": "False",
+            "oneClassSVM": "False",
+            "HalfSpaceTrees": "False"
+        },
+        "deBiasing": {
+            "FeatureName": "None",
+            "ClassName": "None",
+            "Algorithm": "",
+            "TargetFeature": ""
+        },
+        "outlierDetectionStatus": "False",
+        "outlierDetectionMethod": "None",
+        "misValueRatio": "0.8",
+        "categoricalToNumeric": "True",
+        "categoryMaxLabel": "20",
+        "numericFeatureRatio": "0.7",
+        "bucketing": "False",
+        "num_of_quantiles": "5",
+        "normalization": {
+            "standardScaler": "False",
+            "minMax": "False",
+            "logNormal": "False",
+            "maxAbsScaler": "False"
+        },
+        "removeDuplicate": "True",
+        "targetEncodingParams": {
+            "how": {
+                "Mean": "True",
+                "Bayesian Mean": "False"
+            }
+        },
+        "outlierDetectionParams": {
+            "Half space trees": {
+                "n_trees": "5",
+                "height": "3",
+                "window_size": "2",
+                "q": "0.99"
+            },
+            "OneClassSVM": {
+                "nu": "0.2",
+                "q": "0.99"
+            }
+        },
+        "textCleaning": {
+            "removeNoise": "False",
+            "removeNoiseConfig": {
+                "decodeHTML": "False",
+                "removeHyperLinks": "False",
+                "removeMentions": "False",
+                "removeHashtags": "False",
+                "removeEmoji": "False",
+                "unicodeToAscii": "False",
+                "removeNonAscii": "False"
+            },
+            "expandContractions": "False",
+            "normalize": "False",
+            "normalizeMethod": {
+                "lemmatization": "False",
+                "stemming": "False"
+            },
+            "replaceAcronym": "False",
+            "acronymConfig": {
+                "acronymDict": "None"
+            },
+            "correctSpelling": "False",
+            "removeStopwords": "True",
+            "stopWordsConfig": {
+                "extend": "True",
+                "replace": "True",
+                "stopwordsList": []
+            },
+            "removePunctuation": "True",
+            "removePunctuationConfig": {
+                "removePuncWithinTokens": "True"
+            },
+            "removeNumericTokens": "True",
+            "removeNumericConfig": {
+                "removeNumeric_IncludeSpecialCharacters": "True"
+            },
+            "libConfig": {
+                "tokenizationLib": {
+                    "nltk": "True",
+                    "textblob": "False",
+                    "spacy": "False",
+                    "keras": "False",
+                    "gensim": "False"
+                },
+                "lemmatizationLib": {
+                    "nltk": "True",
+                    "textblob": "False",
+                    "spacy": "False"
+                },
+                "stopwordsRemovalLib": {
+                    "nltk": "True",
+                    "spacy": "False",
+                    "gensim": "False"
+                }
+            }
+        },
+        "textFeatureExtraction": {
+            "n_grams": "False",
+            "n_grams_config": {
+                "min_n": 1,
+                "max_n": 1
+            },
+            "pos_tags": "False",
+            "pos_tags_lib": {
+                "nltk": "True",
+                "textblob": "False",
+                "spacy": "False"
+            },
+            "keywordsExtraction": "False",
+            "keywordsExtraction_config": {
+                "ratio": 0.2,
+                "words": "None",
+                "scores": "False",
+                "pos_filter": "NN,JJ",
+                "lemmatize": "False"
+            },
+            "shallowParsing": "False",
+            "shallowParsing_lib": {
+                "spacy": "True",
+                "textblob": "False",
+                "nltk": "False"
+            },
+            "namedEntityRecognition": "False"
+        },
+        "textConversionMethod": {
+            "TF_IDF": "True",
+            "CountVectors": "False",
+            "Word2Vec": "False",
+            "FastText": "False",
+            "Glove": "False",
+            "SentenceTransformer": "False"
+        },
+        "embeddingSize": {
+            "Glove": {
+                "default": "True",
+                "50d": "False",
+                "100d": "False",
+                "200d": "False",
+                "300d": "False"
+            },
+            "FastText": {
+                "default": "True"
+            },
+            "TF_IDF": {
+                "default": "True",
+                "50d": "False",
+                "100d": "False",
+                "200d": "False",
+                "300d": "False"
+            }
+        }
+    },
+    "train_ratio": 0.8,
+    "train_features": [
+        "petal length (cm)",
+        "petal width (cm)",
+        "sepal length (cm)",
+        "sepal width (cm)"
+    ],
+    "text_features": [],
+    "targetPath": "AI0002"
+}

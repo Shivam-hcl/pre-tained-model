@@ -1,0 +1,41 @@
+{
+    "problem_type": "classification",
+    "modelVersion": "1",
+    "target_feature": "Species",
+    "train_ratio": 0.8,
+    "optimization_param": {
+        "iterations": 100,
+        "trainTestCVSplit": 5,
+        "geneticparams": {
+            "n_population": 50,
+            "crossover_proba": 0.5,
+            "mutation_proba": 0.2,
+            "crossover_independent_proba": 0.5,
+            "mutation_independent_proba": 0.05,
+            "tournament_size": 3,
+            "n_gen_no_change": 10
+        }
+    },
+    "train_features": [
+        "petal length (cm)",
+        "petal width (cm)",
+        "sepal length (cm)",
+        "sepal width (cm)"
+    ],
+    "scoring_criteria": "accuracy",
+    "algorithms": {
+        "XGBClassifier": {
+            "learning_rate": [
+                0.01,
+                0.05,
+                0.1
+            ],
+            "n_estimators": [
+                100,
+                200,
+                500
+            ]
+        }
+    },
+    "targetPath": "AI0002"
+}

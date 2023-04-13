@@ -1,0 +1,39 @@
+name: gh-acr-AI0002
+on: 
+  push:
+    branches: main
+    paths: AI0002/**
+  workflow_dispatch:
+jobs:
+  gh-acr-build-push:
+    runs-on: ubuntu-latest 
+    steps:
+    - name: 'checkout action'
+      uses: actions/checkout@main
+    
+    - name: 'azure login'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: 'build and push image'
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    - run:  |
+        docker build ./AI0002/ModelMonitoring -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelmonitoring:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelmonitoring:AI0002
+        docker build ./AI0002/DataIngestion -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/dataingestion:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/dataingestion:AI0002		
+        docker build ./AI0002/DataTransformation -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/datatransformation:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/datatransformation:AI0002
+        docker build ./AI0002/FeatureEngineering -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/featureengineering:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/featureengineering:AI0002
+        docker build ./AI0002/ModelRegistry -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelregistry:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelregistry:AI0002		
+        docker build ./AI0002/ModelServing -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelserving:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/modelserving:AI0002		
+        docker build ./AI0002/ModelTraining_XGBClassifier_MLBased -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/modeltraining_xgbclassifier_mlbased:AI0002
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/modeltraining_xgbclassifier_mlbased:AI0002

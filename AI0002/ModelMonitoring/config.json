@@ -1,0 +1,18 @@
+{
+    "problem_type": "classification",
+    "modelVersion": "1",
+    "target_feature": "Species",
+    "selected_features": [
+        "sepal length (cm)",
+        "sepal width (cm)",
+        "petal length (cm)",
+        "petal width (cm)",
+        "Species"
+    ],
+    "scoring_criteria": "accuracy",
+    "targetPath": "AI0002",
+    "inputUri": "C:\\Users\\shivam.malviya\\AppData\\Local\\Programs\\HCLTech\\AION\\data\\storage\\AION_1681376740.csv",
+    "prod_db_type": "sqlite",
+    "db_config": {},
+    "mlflow_config": {}
+}

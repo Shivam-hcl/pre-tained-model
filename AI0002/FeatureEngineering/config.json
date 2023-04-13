@@ -1,0 +1,13 @@
+{
+    "problem_type": "classification",
+    "modelVersion": "1",
+    "target_feature": "Species",
+    "n_components": 0,
+    "train_features": [
+        "petal length (cm)",
+        "petal width (cm)",
+        "sepal length (cm)",
+        "sepal width (cm)"
+    ],
+    "targetPath": "AI0002"
+}
